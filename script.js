@@ -121,9 +121,10 @@ function draw() {
 			}
 		}
 	}
-	
+	for(var i=0;i<15;i++)
+	    {
 		a(Math.floor(Math.random()*(3-1+1)+1));
-	
+	}
 	
 }
 
