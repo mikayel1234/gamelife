@@ -73,7 +73,7 @@ function setup()
 	createCanvas(matrix[0].length*20,matrix.length*20);
 	background("#acacac");
 	noStroke();
-	
+	frameRate(20)
 
 	
 }
