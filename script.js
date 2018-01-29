@@ -104,7 +104,7 @@ function draw() {
 			{
 				
 				zorq1.push(new Zorqer(x,y));
-				fill("blue");
+				fill("green");
 				rect(x*20,y*20,20,20);
 			}
 			else if(matrix[y][x]==2)
@@ -116,7 +116,7 @@ function draw() {
 			else if(matrix[y][x]==3)
 			{
 				zorq3.push(new Zorqer(x,y));
-				fill("black");
+				fill("red");
 				rect(x*20,y*20,20,20);
 			}
 		}
