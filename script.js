@@ -1,16 +1,6 @@
 
 var matrix=[];
-var randomcolor=[Math.floor(Math.random()*256),Math.floor(Math.random()*256),Math.floor(Math.random()*256)];
-for(var i=0;i<10000;i++)
-{
-	
-}
-var randomcolor1=[Math.floor(Math.random()*256),Math.floor(Math.random()*256),Math.floor(Math.random()*256)]
-for(var i=0;i<10000;i++)
-{
-	
-}
-var randomcolor2=[Math.floor(Math.random()*256),Math.floor(Math.random()*256),Math.floor(Math.random()*256)]
+
 for(var i=0;i<30;i++)
 {
 	matrix[i]=[];
@@ -114,19 +104,19 @@ function draw() {
 			{
 				
 				zorq1.push(new Zorqer(x,y));
-				fill(randomcolor);
+				fill("blue");
 				rect(x*20,y*20,20,20);
 			}
 			else if(matrix[y][x]==2)
 			{
 				zorq2.push(new Zorqer(x,y));
-				fill(randomcolor1);
+				fill("yellow");
 				rect(x*20,y*20,20,20);
 			}
 			else if(matrix[y][x]==3)
 			{
 				zorq3.push(new Zorqer(x,y));
-				fill(randomcolor2);
+				fill("black");
 				rect(x*20,y*20,20,20);
 			}
 		}
