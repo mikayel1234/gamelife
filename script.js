@@ -1,22 +1,56 @@
 
 var matrix=[];
-
-for(var i=0;i<30;i++)
+var randomcolor=[Math.floor(Math.random()*256),Math.floor(Math.random()*256),Math.floor(Math.random()*256)];
+for(var i=0;i<10000;i++)
 {
-	matrix[i]=[];
-	for(var j=0;j<60;j++)
+	
+}
+var randomcolor1=[Math.floor(Math.random()*256),Math.floor(Math.random()*256),Math.floor(Math.random()*256)]
+for(var i=0;i<10000;i++)
+{
+	
+}
+var randomcolor2=[Math.floor(Math.random()*256),Math.floor(Math.random()*256),Math.floor(Math.random()*256)]
+var y1=30;
+var x1=60;
+for(var y=0;y<y1;y++)
+{
+	matrix[y]=[];
+	for(var x=0;x<x1;x++)
 	{
-		if(j<=20)
+		/*
+		if(j<=15)
 		{
 			matrix[i][j]=1
 		}
-		else if(j>20&&j<=40)
+		else if(j<=30&&j>15)
 		{
 			matrix[i][j]=3
+		}
+		else if(j>30&&j<=45)
+		{
+			matrix[i][j]=4
 		}
 		else
 		{
 			matrix[i][j]=2
+		}*/
+		//matrix[i][j]=Math.floor(Math.random()*4)+1;		
+		if(x<x1/2&&y<y1/2)
+		{
+			matrix[y][x]=1
+		}
+		else if(x>=x1/2&&y<y1/2)
+		{
+			matrix[y][x]=3
+		}
+		else if(x<x1/2&&y>=y1/2)
+		{
+			matrix[y][x]=4
+		}
+		else if(x>=x1/2&&y>=y1/2)
+		{
+			matrix[y][x]=2
 		}
 	}
 }
@@ -84,6 +118,13 @@ function a(index)
 			zorq3[i].krvel(3,1);
 		}
 	}
+	else if(index==4)
+	{
+		for(var i=0;i<zorq4.length;i++)
+		{
+			zorq4[i].krvel(4,1);
+		}
+	}
 	else
 	{
 		for(var i=0;i<zorq2.length;i++)
@@ -96,6 +137,7 @@ function draw() {
 	zorq1=[];
 	zorq2=[];
 	zorq3=[];
+	zorq4=[];
 	for(var y=0;y<matrix.length;y++)
 	{
 		for(var x=0;x<matrix[0].length;x++)
@@ -110,20 +152,27 @@ function draw() {
 			else if(matrix[y][x]==2)
 			{
 				zorq2.push(new Zorqer(x,y));
-				fill("yellow");
+				fill("red");
 				rect(x*20,y*20,20,20);
 			}
 			else if(matrix[y][x]==3)
 			{
 				zorq3.push(new Zorqer(x,y));
-				fill("red");
+				fill("blue");
+				rect(x*20,y*20,20,20);
+			}
+			else if(matrix[y][x]==4)
+			{
+				zorq4.push(new Zorqer(x,y));
+				fill("yellow");
 				rect(x*20,y*20,20,20);
 			}
 		}
 	}
+	
 	for(var i=0;i<15;i++)
-	    {
-		a(Math.floor(Math.random()*(3-1+1)+1));
+	{
+		a(Math.floor(Math.random()*(4-1+1)+1));
 	}
 	
 }
